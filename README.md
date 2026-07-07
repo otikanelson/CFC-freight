@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="./assets/icon.png" alt="Freight Logo" width="150px">
+<img src="./assets/icon.png" alt="Freight Logo" width="120px">
 
 **A comprehensive freight and logistics management mobile application built with React Native and Expo**
 
@@ -21,26 +21,15 @@
 
 <div align="center">
 
-### 🎨 **Authentication**
-<img width="499" height="1080" alt="image" src="https://github.com/user-attachments/assets/9eb01c31-f33d-44e9-bd63-061cf4d986c1" />
+### 🎨 App Core Showcase
 
-*Beautiful glassmorphism design with smooth animations*
+| Authentication | Dashboard | Navigation |
+| :-: | :-: | :-: |
+| <img src="https://github.com/user-attachments/assets/9eb01c31-f33d-44e9-bd63-061cf4d986c1" width="240" alt="Authentication" /> <br> *Glassmorphism design* | <img src="https://github.com/user-attachments/assets/b6387cee-f0da-4069-ab61-4966e6509e66" width="240" alt="Dashboard" /> <br> *Intuitive experience* | <img src="https://github.com/user-attachments/assets/1e09f0cf-96a6-473f-970d-c46b32781b45" width="240" alt="Navigation" /> <br> *Glass-effect UI* |
 
-### 🏠 **Main Dashboard & Navigation**
-<img width="499" height="1080" alt="image" src="https://github.com/user-attachments/assets/b6387cee-f0da-4069-ab61-4966e6509e66" />
-<img width="499" height="1080" alt="image" src="https://github.com/user-attachments/assets/1e09f0cf-96a6-473f-970d-c46b32781b45" />
-
-*Modern glass-effect navigation with intuitive user experience*
-
-### 📋 **Core Features**
-<img width="499" height="1080" alt="image" src="https://github.com/user-attachments/assets/1af3c011-4298-464c-9074-49529bef1860" />
-
-*Comprehensive freight management tools at your fingertips*
-
-### 👤 **Support**
-<img width="499" height="1080" alt="image" src="https://github.com/user-attachments/assets/eb898128-e7b6-4dd3-af2a-a43bb60c7b5c" />
-
-*Complete user management and support system*
+| Core Features | Support |
+| :-: | :-: |
+| <img src="https://github.com/user-attachments/assets/1af3c011-4298-464c-9074-49529bef1860" width="240" alt="Core Features" /> <br> *Freight tools* | <img src="https://github.com/user-attachments/assets/eb898128-e7b6-4dd3-af2a-a43bb60c7b5c" width="240" alt="Support" /> <br> *User management* |
 
 </div>
 
@@ -75,7 +64,7 @@
 
 | Frontend | Backend | Tools & Services |
 |----------|---------|------------------|
-| ![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) | ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) | ![Expo](https://img.shields.io/badge/Expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37) |
+| ![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) | ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) | ![Expo](https://shields.io) |
 | ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) | ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge) | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white) |
 | ![Expo Blur](https://img.shields.io/badge/Expo_Blur-000020?style=for-the-badge&logo=expo) | ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens) | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) |
 
@@ -182,34 +171,7 @@ The backend is deployed on **Vercel** with serverless functions:
 
 ## 📁 Project Structure
 
-```
-Freight/
-├── 📱 App.tsx                 # Main app component
-├── 📁 screens/                # Screen components
-│   ├── AuthScreen.tsx
-│   ├── HomeScreen.tsx
-│   ├── ProfileScreen.tsx
-│   └── SupportScreen.tsx
-├── 🧩 components/             # Reusable components
-│   ├── AppNavigator.tsx
-│   ├── GlassCard.tsx
-│   ├── LoginForm.tsx
-│   └── SignUpForm.tsx
-├── 🔧 services/               # API and storage services
-│   ├── api.ts
-│   ├── authService.ts
-│   └── storageService.ts
-├── 🎨 assets/                 # Images and icons
-├── 🔙 freight-backend/        # Backend API
-│   ├── src/
-│   │   ├── routes/
-│   │   ├── middleware/
-│   │   └── config/
-│   ├── api/                   # Vercel serverless functions
-│   └── vercel.json            # Deployment configuration
-└── 📄 README.md
-```
-
+Use code with caution.Freight/├── 📱 App.tsx                 # Main app component├── 📁 screens/                # Screen components│   ├── AuthScreen.tsx│   ├── HomeScreen.tsx│   ├── ProfileScreen.tsx│   └── SupportScreen.tsx├── 🧩 components/             # Reusable components│   ├── AppNavigator.tsx│   ├── GlassCard.tsx│   ├── LoginForm.tsx│   └── SignUpForm.tsx├── 🔧 services/               # API and storage services│   ├── api.ts│   ├── authService.ts│   └── storageService.ts├── 🎨 assets/                 # Images and icons├── 🔙 freight-backend/        # Backend API│   ├── src/│   │   ├── routes/│   │   ├── middleware/│   │   └── config/│   ├── api/                   # Vercel serverless functions│   └── vercel.json            # Deployment configuration└── 📄 README.md
 ---
 
 ## 🤝 Contributing

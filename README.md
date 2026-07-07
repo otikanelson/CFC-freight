@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Freight Logo](./assets/icon.png)
+<img src="./assets/icon.png" alt="Freight Logo" width="150px">
 
 **A comprehensive freight and logistics management mobile application built with React Native and Expo**
 
@@ -21,27 +21,24 @@
 
 <div align="center">
 
-### 🎨 **Splash & Authentication**
-<img src="./screenshots/splash-screen.png" width="250" alt="Splash Screen" />
-<img src="./screenshots/auth-screen.png" width="250" alt="Authentication Screen" />
+### 🎨 **Authentication**
+<img width="499" height="1080" alt="image" src="https://github.com/user-attachments/assets/9eb01c31-f33d-44e9-bd63-061cf4d986c1" />
 
 *Beautiful glassmorphism design with smooth animations*
 
 ### 🏠 **Main Dashboard & Navigation**
-<img src="./screenshots/home-screen.png" width="250" alt="Home Dashboard" />
-<img src="./screenshots/navigation.png" width="250" alt="Bottom Navigation" />
+<img width="499" height="1080" alt="image" src="https://github.com/user-attachments/assets/b6387cee-f0da-4069-ab61-4966e6509e66" />
+<img width="499" height="1080" alt="image" src="https://github.com/user-attachments/assets/1e09f0cf-96a6-473f-970d-c46b32781b45" />
 
 *Modern glass-effect navigation with intuitive user experience*
 
 ### 📋 **Core Features**
-<img src="./screenshots/clearing-screen.png" width="250" alt="Clearing Process" />
-<img src="./screenshots/logistics-screen.png" width="250" alt="Logistics Management" />
+<img width="499" height="1080" alt="image" src="https://github.com/user-attachments/assets/1af3c011-4298-464c-9074-49529bef1860" />
 
 *Comprehensive freight management tools at your fingertips*
 
-### 👤 **Profile & Support**
-<img src="./screenshots/profile-screen.png" width="250" alt="User Profile" />
-<img src="./screenshots/support-screen.png" width="250" alt="Support Center" />
+### 👤 **Support**
+<img width="499" height="1080" alt="image" src="https://github.com/user-attachments/assets/eb898128-e7b6-4dd3-af2a-a43bb60c7b5c" />
 
 *Complete user management and support system*
 

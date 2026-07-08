@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
+import * as jwt from 'jsonwebtoken';
+import * as bcrypt from 'bcryptjs';
 
 // In-memory storage (replace with database in production)
 const usersDb: any[] = [];
@@ -65,7 +65,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       
       // SIGNUP
       if (method === 'POST' && (route === 'signup' || url?.endsWith('/signup'))) {
-        const { fullName, email, phone, password } = req.body;
+        const { fullName, email, phone, password } = req.body || {};
 
         if (!fullName || !email || !password) {
           return res.status(400).json({ error: 'Missing required fields' });
@@ -105,7 +105,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       // LOGIN
       if (method === 'POST' && (route === 'login' || url?.endsWith('/login'))) {
-        const { email, password } = req.body;
+        const { email, password } = req.body || {};
 
         if (!email || !password) {
           return res.status(400).json({ error: 'Email and password are required' });

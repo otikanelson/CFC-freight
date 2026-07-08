@@ -1,14 +1,9 @@
 {
   "version": 2,
-  "name": "freight-backend", 
   "builds": [
     {
-      "src": "api/index.ts",
-      "use": "@vercel/node@3.0.7",
-      "config": {
-        "maxDuration": 30,
-        "includeFiles": ["package.json"]
-      }
+      "src": "api/*.ts",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -25,13 +20,12 @@
       "dest": "api/index.ts"
     },
     {
+      "src": "/api/hello",
+      "dest": "api/hello.ts"
+    },
+    {
       "src": "/(.*)",
       "dest": "api/index.ts"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "regions": ["iad1"],
-  "installCommand": "npm install --production"
+  ]
 }

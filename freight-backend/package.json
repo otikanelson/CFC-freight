@@ -2,10 +2,10 @@
   "name": "freight-backend",
   "version": "1.0.0",
   "description": "Freight management API",
-  "main": "api/index.ts",
+  "main": "index.ts",
   "scripts": {
-    "dev": "ts-node src/index.ts",
-    "start": "node api/index.js",
+    "dev": "ts-node src/index.ts", 
+    "start": "node index.js",
     "build": "echo 'Serverless function - no build needed'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

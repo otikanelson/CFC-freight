@@ -28,6 +28,10 @@ export default function AuthScreen({ onAuthSuccess }: AuthScreenProps) {
     onAuthSuccess(false, user); // false means not guest mode
   };
 
+  const handleGuestContinue = () => {
+    onAuthSuccess(true, null); // true means guest mode, no user data
+  };
+
   return (
     <GlassmorphismBackground variant="secondary">
       <KeyboardAvoidingView
@@ -68,12 +72,20 @@ export default function AuthScreen({ onAuthSuccess }: AuthScreenProps) {
             >
               {/* Sign Up Form */}
               <View style={styles.formSlide}>
-                <SignUpForm onSwitchToLogin={() => toggleAuth(true)} onAuthSuccess={handleAuthSuccess} />
+                <SignUpForm 
+                  onSwitchToLogin={() => toggleAuth(true)} 
+                  onAuthSuccess={handleAuthSuccess}
+                  onGuestContinue={handleGuestContinue}
+                />
               </View>
 
               {/* Login Form */}
               <View style={styles.formSlide}>
-                <LoginForm onSwitchToSignUp={() => toggleAuth(false)} onAuthSuccess={handleAuthSuccess} />
+                <LoginForm 
+                  onSwitchToSignUp={() => toggleAuth(false)} 
+                  onAuthSuccess={handleAuthSuccess}
+                  onGuestContinue={handleGuestContinue}
+                />
               </View>
             </Animated.View>
           </View>

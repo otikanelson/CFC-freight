@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Freight",
+    "name": "CFC Freight",
     "slug": "freight",
-    "version": "1.0.0",
+    "version": "2.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -27,8 +27,11 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.cfcfreight.app",
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "versionCode": 5,
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -38,6 +41,9 @@
       "eas": {
         "projectId": "ccbea4e1-0ac7-444e-93f1-3ab52cc6df09"
       }
-    }
+    },
+    "plugins": [
+      "expo-secure-store"
+    ]
   }
 }

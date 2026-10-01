@@ -25,10 +25,14 @@ export const authService = {
   },
 
   async signup(credentials: SignupCredentials) {
-    console.log('AuthService: Attempting signup with:', credentials);
+    if (__DEV__) {
+      console.log('AuthService: Attempting signup with:', credentials);
+    }
     try {
       const response = await api.post('/auth/signup', credentials);
-      console.log('AuthService: Signup response:', response.data);
+      if (__DEV__) {
+        console.log('AuthService: Signup response:', response.data);
+      }
       const { token, user } = response.data;
       
       await storeToken(token);
@@ -36,7 +40,9 @@ export const authService = {
       
       return { token, user };
     } catch (error) {
-      console.error('AuthService: Signup error:', error);
+      if (__DEV__) {
+        console.error('AuthService: Signup error:', error);
+      }
       throw error;
     }
   },

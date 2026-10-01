@@ -7,9 +7,10 @@ import { authService } from '../services/authService';
 interface LoginFormProps {
   onSwitchToSignUp: () => void;
   onAuthSuccess: (user: any) => void;
+  onGuestContinue?: () => void;
 }
 
-export default function LoginForm({ onSwitchToSignUp, onAuthSuccess }: LoginFormProps) {
+export default function LoginForm({ onSwitchToSignUp, onAuthSuccess, onGuestContinue }: LoginFormProps) {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -96,6 +97,15 @@ export default function LoginForm({ onSwitchToSignUp, onAuthSuccess }: LoginForm
           disabled={isLoading}
         />
 
+        {onGuestContinue && (
+          <Button
+            title="Continue as Guest"
+            variant="outline"
+            onPress={onGuestContinue}
+            style={styles.guestButton}
+          />
+        )}
+
         <View style={styles.switchContainer}>
           <Text style={styles.switchText}>Don't have an account? </Text>
           <TouchableOpacity onPress={onSwitchToSignUp}>
@@ -157,6 +167,9 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   submitButton: {
+    marginBottom: 24,
+  },
+  guestButton: {
     marginBottom: 24,
   },
   switchContainer: {

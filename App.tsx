@@ -1,12 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, ActivityIndicator, StyleSheet, Platform } from 'react-native';
 import SplashScreen from './screens/SplashScreen';
 import CustomSplashScreen from './screens/CustomSplashScreen';
 import AuthScreen from './screens/AuthScreen';
 import AppNavigator from './components/AppNavigator';
+import ErrorBoundary from './components/ErrorBoundary';
 import { authService } from './services/authService';
 import { getUser } from './services/storageService';
+
+// Safe console logging for production
+const safeLog = (...args) => {
+  try {
+    if (__DEV__ || console) {
+      console.log(...args);
+    }
+  } catch (e) {
+    // Silent fail
+  }
+};
+
+const safeError = (...args) => {
+  try {
+    if (__DEV__ || console) {
+      console.error(...args);
+    }
+  } catch (e) {
+    // Silent fail
+  }
+};
+
+const safeWarn = (...args) => {
+  try {
+    if (__DEV__ || console) {
+      console.warn(...args);
+    }
+  } catch (e) {
+    // Silent fail
+  }
+};
 
 type AppState = 'splash' | 'customSplash' | 'auth' | 'main' | 'loading';
 
@@ -18,24 +50,51 @@ export default function App() {
 
   // Check for existing authentication on app start
   useEffect(() => {
+    let isMounted = true;
+    
     const checkAuthState = async () => {
       try {
         const isAuth = await authService.isAuthenticated();
-        if (isAuth) {
-          const user = await getUser();
-          setIsAuthenticated(true);
-          setUserData(user);
-          setAppState('main');
-        } else {
-          setAppState('splash');
+        if (isMounted) {
+          if (isAuth) {
+            const user = await getUser();
+            setIsAuthenticated(true);
+            setUserData(user);
+            setAppState('main');
+          } else {
+            setAppState('splash');
+          }
         }
       } catch (error) {
-        console.error('Auth check failed:', error);
-        setAppState('splash');
+        safeError('Auth check failed:', error);
+        // If there's an error, clear any corrupted data and start fresh
+        try {
+          await authService.logout();
+        } catch (logoutError) {
+          safeError('Logout failed:', logoutError);
+        }
+        if (isMounted) {
+          setAppState('splash');
+        }
       }
     };
 
-    checkAuthState();
+    // Add a timeout to prevent indefinite loading
+    const timeoutId = setTimeout(() => {
+      if (isMounted) {
+        safeWarn('Auth check timed out, showing splash');
+        setAppState('splash');
+      }
+    }, 5000);
+
+    checkAuthState().finally(() => {
+      clearTimeout(timeoutId);
+    });
+
+    return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   // Handle splash screen completion
@@ -97,10 +156,10 @@ export default function App() {
   };
 
   return (
-    <>
+    <ErrorBoundary>
       <StatusBar style="light" />
       {renderCurrentScreen()}
-    </>
+    </ErrorBoundary>
   );
 }
 

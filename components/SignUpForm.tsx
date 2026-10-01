@@ -7,9 +7,10 @@ import { authService } from '../services/authService';
 interface SignUpFormProps {
   onSwitchToLogin: () => void;
   onAuthSuccess: (user: any) => void;
+  onGuestContinue?: () => void;
 }
 
-export default function SignUpForm({ onSwitchToLogin, onAuthSuccess }: SignUpFormProps) {
+export default function SignUpForm({ onSwitchToLogin, onAuthSuccess, onGuestContinue }: SignUpFormProps) {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -134,6 +135,15 @@ export default function SignUpForm({ onSwitchToLogin, onAuthSuccess }: SignUpFor
           disabled={isLoading}
         />
 
+        {onGuestContinue && (
+          <Button
+            title="Continue as Guest"
+            variant="outline"
+            onPress={onGuestContinue}
+            style={styles.guestButton}
+          />
+        )}
+
         <View style={styles.switchContainer}>
           <Text style={styles.switchText}>Already have an account? </Text>
           <TouchableOpacity onPress={onSwitchToLogin}>
@@ -187,6 +197,9 @@ const styles = StyleSheet.create({
   },
   submitButton: {
     marginTop: 4,
+    marginBottom: 16,
+  },
+  guestButton: {
     marginBottom: 16,
   },
   switchContainer: {

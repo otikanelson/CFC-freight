@@ -14,7 +14,7 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "index.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -23,21 +23,21 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^15.1.1",
-    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-native-async-storage/async-storage": "~2.2.0",
     "axios": "^1.18.1",
-    "expo": "~54.0.34",
-    "expo-blur": "^56.0.3",
-    "expo-dev-client": "~6.0.21",
+    "expo": "^57.0.23",
+    "expo-blur": "~15.0.8",
+    "expo-build-properties": "~1.0.10",
     "expo-linear-gradient": "~15.0.8",
-    "expo-secure-store": "^57.0.0",
-    "expo-status-bar": "~3.0.9",
-    "react": "19.1.0",
-    "react-native": "0.81.5"
+    "expo-secure-store": "~15.0.8",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-native": "0.86.3"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.10",
     "@types/react": "~19.1.10",
-    "babel-preset-expo": "~54.0.10",
+    "babel-preset-expo": "~57.0.0",
     "typescript": "~5.9.2"
   }
 }
